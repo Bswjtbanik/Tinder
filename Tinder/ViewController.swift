@@ -14,6 +14,12 @@ class ViewController: UIViewController {
     let cardDeskView = UIView()
     let bottomStackView = HomeBottomControlsStackView()
 
+    let users = [
+        User(name: "Puja", age: 18, profession: "Framacy", imageName: "cardView"),
+        User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2")
+
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,9 +28,25 @@ class ViewController: UIViewController {
     }
     
     fileprivate func setupDumyCard() {
-        let cardView = CardView()
-        cardDeskView.addSubview(cardView)
-        cardView.fillSuperview()
+        
+        users.forEach { (user) in
+            let cardView = CardView()
+            cardView.imageView.image = UIImage(named: user.imageName)
+           // cardView.informationLabel.text = "\(user.name) \(user.age) \n \(user.profession)"
+           
+
+            let attributeText = NSMutableAttributedString(string: user.name, attributes: [.font: UIFont.systemFont(ofSize: 32, weight: .heavy)])
+            attributeText.append(NSAttributedString(string: "  \(user.age)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
+             attributeText.append(NSAttributedString(string: "\n\(user.profession)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
+
+
+            cardView.informationLabel.attributedText = attributeText
+
+            cardDeskView.addSubview(cardView)
+            cardView.fillSuperview()
+        }
+      
+      
     }
     
      

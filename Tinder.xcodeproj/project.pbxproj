@@ -16,6 +16,7 @@
 		A5193288221692830002E4C0 /* HomeBottomControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5193287221692830002E4C0 /* HomeBottomControlsStackView.swift */; };
 		A519328A22169CFB0002E4C0 /* TopNaviagationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A519328922169CFB0002E4C0 /* TopNaviagationStackView.swift */; };
 		A519328C2216D9010002E4C0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A519328B2216D9010002E4C0 /* CardView.swift */; };
+		A519328F22170BAF0002E4C0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A519328E22170BAF0002E4C0 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A5193287221692830002E4C0 /* HomeBottomControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomControlsStackView.swift; sourceTree = "<group>"; };
 		A519328922169CFB0002E4C0 /* TopNaviagationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNaviagationStackView.swift; sourceTree = "<group>"; };
 		A519328B2216D9010002E4C0 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		A519328E22170BAF0002E4C0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		A5193270221680D90002E4C0 /* Tinder */ = {
 			isa = PBXGroup;
 			children = (
+				A519328D22170B320002E4C0 /* Model */,
 				A51932862216923F0002E4C0 /* Views */,
 				A5193283221688C60002E4C0 /* Extensions */,
 				A5193271221680D90002E4C0 /* AppDelegate.swift */,
@@ -90,6 +93,14 @@
 				A519328B2216D9010002E4C0 /* CardView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A519328D22170B320002E4C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A519328E22170BAF0002E4C0 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				A5193272221680D90002E4C0 /* AppDelegate.swift in Sources */,
 				A519328C2216D9010002E4C0 /* CardView.swift in Sources */,
 				A5193285221689510002E4C0 /* Extensions+UIView.swift in Sources */,
+				A519328F22170BAF0002E4C0 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
