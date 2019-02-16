@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeController: UIViewController {
     
     let topStackView = TopNaviagationStackView()
     let cardDeskView = UIView()
@@ -16,7 +16,11 @@ class ViewController: UIViewController {
 
     let users = [
         User(name: "Puja", age: 18, profession: "Framacy", imageName: "cardView"),
+        User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2"),
+        User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2"),
+        User(name: "Puja", age: 18, profession: "Framacy", imageName: "cardView"),
         User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2")
+
 
     ]
     
