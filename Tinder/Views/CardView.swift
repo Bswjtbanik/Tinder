@@ -10,8 +10,20 @@ import UIKit
 
 class CardView: UIView {
 
-     let imageView = UIImageView(image: #imageLiteral(resourceName: "cardView"))
-     let informationLabel = UILabel()
+    
+    
+    
+    var cardViewModel : CardViewModel! {
+        didSet {
+            imageView.image = UIImage(named: cardViewModel.imageName)
+            informationLabel.attributedText = cardViewModel.attributeString
+            informationLabel.textAlignment = cardViewModel.textAlignment
+        }
+    }
+    
+    
+    fileprivate let imageView = UIImageView(image: #imageLiteral(resourceName: "cardView"))
+    fileprivate let informationLabel = UILabel()
     
     
     fileprivate let threshold : CGFloat = 80

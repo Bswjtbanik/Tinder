@@ -8,6 +8,10 @@
 
 import UIKit
 
+
+protocol ProduceCardViewModel {
+    func cardViewModel() -> CardViewModel 
+}
 struct CardViewModel {
     
     let imageName :String

@@ -14,26 +14,24 @@ class HomeController: UIViewController {
     let cardDeskView = UIView()
     let bottomStackView = HomeBottomControlsStackView()
 
-//    let users = [
-//        User(name: "Puja", age: 18, profession: "Framacy", imageName: "cardView"),
-//        User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2"),
-//        User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2"),
-//        User(name: "Puja", age: 18, profession: "Framacy", imageName: "cardView"),
-//        User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2")
-//
-//
-//    ]
+
     
-    let cardViewModels = [
-          User(name: "Puja", age: 18, profession: "Framacy", imageName: "cardView").cardViewModel(),
-          User(name: "Puja", age: 18, profession: "Framacy", imageName: "cardView").cardViewModel(),
-          User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2").cardViewModel(),
-          User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2").cardViewModel(),
-          User(name: "Puja", age: 18, profession: "Framacy", imageName: "cardView").cardViewModel(),
-          User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2").cardViewModel()
+    let cardViewModels : [CardViewModel] = {
+        let producers = [
+            User(name: "Puja", age: 18, profession: "Framacy", imageName: "cardView"),
+            User(name: "Puja", age: 18, profession: "Framacy", imageName: "cardView"),
+            User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2"),
+            User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2"),
+            User(name: "Puja", age: 18, profession: "Framacy", imageName: "cardView"),
+            User(name: "Maliha", age: 25, profession: "BBA", imageName: "cardView2"),
+            Advertiser(title: "Biswajit Banik", brandName: "Tinder Apps", posterPhotoName: "add"),
+            User(name: "Puja", age: 18, profession: "Framacy", imageName: "cardView"),
+        ] as [ProduceCardViewModel]
+        let viewModels = producers.map({return $0.cardViewModel()})
+        return viewModels
+    }()
     
-    ]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -46,37 +44,13 @@ class HomeController: UIViewController {
         
         cardViewModels.forEach { (CardVM) in
             let cardView = CardView(frame: .zero)
-            cardView.imageView.image = UIImage(named: CardVM.imageName)
-            cardView.informationLabel.attributedText = CardVM.attributeString
-            cardView.informationLabel.textAlignment = CardVM.textAlignment
-            
+            cardView.cardViewModel = CardVM
             cardDeskView.addSubview(cardView)
             cardView.fillSuperview()
             
         }
-        
-//        users.forEach { (user) in
-//            let cardView = CardView()
-//            cardView.imageView.image = UIImage(named: user.imageName)
-//           // cardView.informationLabel.text = "\(user.name) \(user.age) \n \(user.profession)"
-//
-//
-//            let attributeText = NSMutableAttributedString(string: user.name, attributes: [.font: UIFont.systemFont(ofSize: 32, weight: .heavy)])
-//            attributeText.append(NSAttributedString(string: "  \(user.age)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
-//             attributeText.append(NSAttributedString(string: "\n\(user.profession)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
-//
-//
-//            cardView.informationLabel.attributedText = attributeText
-//
-//            cardDeskView.addSubview(cardView)
-//            cardView.fillSuperview()
-//        }
-//
-      
     }
-    
-     
-    
+
     //MARK:- setup layout
     fileprivate func setUpLayout() {
         let overallStackView = UIStackView(arrangedSubviews: [topStackView, cardDeskView , bottomStackView])
